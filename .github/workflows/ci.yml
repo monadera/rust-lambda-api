@@ -1,0 +1,22 @@
+name: lint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  rust-quality-checks:
+    name: Rust quality checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: clippy
+        run: cargo clippy --all-targets --all-features -- -D warnings
+      - name: rustfmt
+        run: cargo fmt --all --check
+      - name: tests
+        run: cargo test
