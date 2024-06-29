@@ -1,0 +1,20 @@
+# CKD related artifacts
+cdk.out
+cdk.context.json
+
+# Python
+.venv
+__pycache__
+.mypy_cache
+.pytest_cache
+*.py[cod]
+
+# Rust
+target/
+
+# IDEs
+.idea/
+.vscode/
+
+# Other
+.DS_Store

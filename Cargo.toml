@@ -1,0 +1,25 @@
+[package]
+name = "serverless-rust-api"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "local"
+path = "src/bin/local.rs"
+
+[dependencies]
+anyhow = "^1.0.86"
+async-trait = "^0.1"
+envy = "^0.4"
+poem = "^3.0"
+poem-lambda = "^5.0"
+poem-openapi = { version = "^5.0", features = ["swagger-ui"] }
+serde = { version = "^1.0", features = ["derive"] }
+serde_dynamo = { version = "^4.2", features = ["aws-sdk-dynamodb+1"] }
+thiserror = "^1.0"
+tokio = { version = "^1.38", features = ["full"] }
+tracing = "^0.1"
+tracing-subscriber = { version = "^0.3", features = ["json", "env-filter"] }
+
+[dev-dependencies]
+poem = { version = "^3.0", features = ["test"] }
