@@ -26,7 +26,7 @@ mod tests {
     use poem::Endpoint;
     use std::sync::Arc;
 
-    use crate::build_app;
+    use crate::api::build_app;
     use crate::repository::{Currency, InMemoryRepository};
 
     fn setup_client() -> TestClient<impl Endpoint> {
