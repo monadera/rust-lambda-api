@@ -12,9 +12,8 @@ async fn main() -> Result<()> {
         .json()
         .init();
     let settings = envy::from_env::<Settings>()?;
-    let table_name = settings.table_name.expect("table name to be specified");
 
-    let repository = Arc::new(DynamoDbRepository::new(table_name).await);
+    let repository = Arc::new(DynamoDbRepository::new(settings.table_name).await);
     let app = build_app(repository)?;
     poem_lambda::run(app).await.expect("app to start correctly");
 
