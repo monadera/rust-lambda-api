@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "serverless-api"
+version = "0.0.0"
+description = "Infrastructure for a serverless Rust API."
+authors = []
+readme = "README.md"
+packages = [{ include = "stack", from = "infrastructure" }]
+
+[tool.poetry.group.main.dependencies]
+python = "^3.11"
+
+aws-cdk-lib = "^2.147"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.10"
+ruff = "^0.3"
+
+[tool.mypy]
+ignore_missing_imports = true
+disallow_untyped_defs = true
+
+[tool.ruff]
+exclude = [
+    ".git",
+    ".git-rewrite",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "build",
+    "dist",
+    "site-packages",
+]
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "C", # flake8-comprehensions
+    "B", # flake8-bugbear
+    "N", # PEP 8 naming convention
+]
+
+ignore = [
+    "E501", # line too long, handled by formatter
+    "W291", # trailing whitespace, handled by formatter
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = false
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
