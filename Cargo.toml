@@ -7,9 +7,15 @@ edition = "2021"
 name = "local"
 path = "src/bin/local.rs"
 
+[[bin]]
+name = "serverless"
+path = "src/bin/serverless.rs"
+
 [dependencies]
 anyhow = "^1.0.86"
 async-trait = "^0.1"
+aws-config = "^1.5"
+aws-sdk-dynamodb = "^1.36"
 envy = "^0.4"
 poem = "^3.0"
 poem-lambda = "^5.0"
