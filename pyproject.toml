@@ -40,12 +40,13 @@ exclude = [
 
 [tool.ruff.lint]
 select = [
-    "E", # pycodestyle errors
-    "W", # pycodestyle warnings
-    "F", # pyflakes
-    "C", # flake8-comprehensions
     "B", # flake8-bugbear
+    "C", # flake8-comprehensions
+    "E", # pycodestyle errors
+    "F", # pyflakes
+    "I", # imports
     "N", # PEP 8 naming convention
+    "W", # pycodestyle warnings
 ]
 
 ignore = [

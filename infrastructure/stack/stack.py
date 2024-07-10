@@ -1,15 +1,15 @@
 import pathlib
 
 from aws_cdk import CfnOutput, Stack
-from aws_cdk.aws_lambda import Architecture, Code, Function, Runtime
 from aws_cdk.aws_cognito import (
-    UserPool,
-    StandardAttributes,
-    StandardAttribute,
     AuthFlow,
+    StandardAttribute,
+    StandardAttributes,
+    UserPool,
     UserPoolClient,
 )
-from aws_cdk.aws_dynamodb import Table, Attribute, AttributeType
+from aws_cdk.aws_dynamodb import Attribute, AttributeType, Table
+from aws_cdk.aws_lambda import Architecture, Code, Function, Runtime
 from constructs import Construct
 
 from stack.api import ServerlessApi
